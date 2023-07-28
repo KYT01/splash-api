@@ -20,7 +20,7 @@ app.listen(PORT, ()=> console.log('app is running on ${PORT}'));
 
 app.get("/photos", async (request, response) => {
     const subject = request.query.subject
-    const API = `https://api.unsplash.com/search/photos/?client_id=${process.env.REACT_APP_ACCESS_KEY}&query=${subject}`;
+    const API = `https://api.unsplash.com/search/photos/?client_id=${process.env.ACCESS_KEY}&query=${subject}`;
     const res = await axios.get(API);
 
     const photos = res.data.results.map((photo)=>{
